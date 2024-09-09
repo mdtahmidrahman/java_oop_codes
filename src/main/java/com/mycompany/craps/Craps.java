@@ -40,9 +40,9 @@ public class Craps
     {
         int myPoint = 0;
         Status gameStatus;
-        int SumOfDice = rollDie();
+        int sumOfDice = rollDie();
         
-        switch(SumOfDice)
+        switch(sumOfDice)
         {
             case SEVEN:
             case YO_EVEN:
@@ -55,17 +55,17 @@ public class Craps
                 break;
             default:
                 gameStatus = Status.CONTINUE;
-                myPoint = SumOfDice;
+                myPoint = sumOfDice;
                 System.out.printf("My point is  %d%n", myPoint);
                 break;
         }
         while (gameStatus == Status.CONTINUE)
         {
-            SumOfDice = rollDie();
-            if (SumOfDice == myPoint)
+            sumOfDice = rollDie();
+            if (sumOfDice == myPoint)
                 gameStatus = Status.WON;
 
-            else if (SumOfDice == SEVEN)
+            else if (sumOfDice == SEVEN)
                 gameStatus = Status.LOST;
 
         }
